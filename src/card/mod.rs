@@ -20,6 +20,19 @@ impl Card {
         }
     }
 
+    pub fn get_cost(&self) -> &Vec<RessourceType>{
+        todo!()
+    }
+
+    pub fn get_ressource_produced(&self) -> Option<RessourceType> {
+        match self.card_type {
+            CardType::Gray{ressource_type} | CardType::Brown{ressource_type} => {
+                return Some(ressource_type)
+            },            
+            _ => {None} 
+        }
+    }
+
     pub fn display(&self) {
         println!("{}", self.name)
     }
