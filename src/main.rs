@@ -14,6 +14,25 @@ fn main() {
     }
     //println!("{:?}", get_nb_of_player());
 }
+
+pub fn get_and_check_userinput() -> usize{
+    loop{
+ 
+    let mut user_input= String::new();
+
+    std::io::stdin().read_line(&mut user_input).unwrap();
+
+    match user_input.trim().parse::<usize>() {
+            Ok(user_input) => {
+                user_input
+            }
+            Err(_) => {
+                println!("ce n'es pas un nombre");
+                continue;
+            }
+        };
+    }
+}
 //Savoir combien de joueurs jouent
 //Creer un deck approprié au nombre de joueur
 //Attribuer une merveille à chaque joueurs

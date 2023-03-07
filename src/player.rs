@@ -38,6 +38,13 @@ impl Player {
         map
 
     }
+
+    pub fn diplay_hand(&self){
+        for card in &self.hand{
+            card.display();
+        }
+    }
+
     pub fn set_hand(&mut self, card_list: Vec<Card>) {
         self.hand = card_list;
     }
